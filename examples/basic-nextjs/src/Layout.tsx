@@ -35,9 +35,9 @@ const Layout = ({ page }: LayoutProps): JSX.Element => {
             />
           )
         ) : (
-          <>
-            <header>
-              <div id="header">
+          <div className="site-layout">
+            <header className="site-header">
+              <div id="header" className="header-content">
                 {route && (
                   <AppPlaceholder
                     page={page}
@@ -48,8 +48,8 @@ const Layout = ({ page }: LayoutProps): JSX.Element => {
                 )}
               </div>
             </header>
-            <main>
-              <div id="content">
+            <main className="site-main">
+              <div id="content" className="main-content">
                 {route && (
                   <AppPlaceholder
                     page={page}
@@ -60,8 +60,8 @@ const Layout = ({ page }: LayoutProps): JSX.Element => {
                 )}
               </div>
             </main>
-            <footer>
-              <div id="footer">
+            <footer className="site-footer">
+              <div id="footer" className="footer-content">
                 {route && (
                   <AppPlaceholder
                     page={page}
@@ -72,7 +72,7 @@ const Layout = ({ page }: LayoutProps): JSX.Element => {
                 )}
               </div>
             </footer>
-          </>
+          </div>
         )}
       </div>
     </>

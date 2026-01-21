@@ -2,7 +2,7 @@
 
 import React, { JSX } from 'react';
 import { ComponentProps } from 'lib/component-props';
-import { AppPlaceholder } from "@sitecore-content-sdk/nextjs";
+import { AppPlaceholder } from '@sitecore-content-sdk/nextjs';
 
 // Lazy load component map function to avoid circular dependency
 import type { NextjsContentSdkComponent } from '@sitecore-content-sdk/nextjs';
@@ -16,18 +16,21 @@ const getComponentMap = (): Map<string, NextjsContentSdkComponent> => {
   return componentMapCache!; // Non-null assertion: cache is set above if null
 };
 
-const PartialDesignDynamicPlaceholder = (
-  props: ComponentProps
-): JSX.Element => {
+export const Default = (props: ComponentProps): JSX.Element => {
+  const { rendering, page } = props;
+
   return (
-    <AppPlaceholder
-      name={props.rendering?.params?.sig || ""}
-      rendering={props.rendering}
-      page={props.page}
-      componentMap={getComponentMap()}
-    />
+    <div className="component sxa-header">
+      <div className="component-content">
+        <AppPlaceholder
+          name="header"
+          rendering={rendering}
+          page={page}
+          componentMap={getComponentMap()}
+        />
+      </div>
+    </div>
   );
 };
 
-export const Default = PartialDesignDynamicPlaceholder;
-export default PartialDesignDynamicPlaceholder;
+export default Default;

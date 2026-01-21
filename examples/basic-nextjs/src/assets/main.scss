@@ -1,4 +1,5 @@
-/* This file bootstraps our application styles by loading:
- * Bootstrap: foundational grid system, utilities, and core components.
+/* This file bootstraps our application styles.
+ * Note: Bootstrap is not installed, using Tailwind CSS instead.
+ * If Bootstrap is needed, install it: npm install bootstrap
  */
-@import "bootstrap/scss/bootstrap";
+/* @import "bootstrap/scss/bootstrap"; */
